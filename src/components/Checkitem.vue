@@ -1,15 +1,18 @@
 <template>
-    <b-card :border-variant="checked?'success':null">
+    <b-card @click="checked = !checked" :border-variant="checked?'success':null">
        <div>
-           <b-check :state="checked?true:null" class="mt-1" style="float:left; display:inline;" v-model="checked"></b-check>
-           <h4 @click="checked = !checked" style="float:left; display:inline;">{{check.title}}</h4>
+           <CustomCheckbox :checked="checked">
+               <h4 class="mt-1">{{check.title}}</h4>
+           </CustomCheckbox>
        </div>
     </b-card>
 </template>
 
 <script>
+    import CustomCheckbox from "@/components/CustomCheckbox";
     export default {
         name: "Checkitem",
+        components: {CustomCheckbox},
         props: {
             check: {
                 type: Object,
