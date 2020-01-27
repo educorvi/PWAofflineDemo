@@ -16,6 +16,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "src/customStyles";
     /**
    * Extracted from: SweetAlert
    * Modified by: Istiak Tridip
@@ -31,7 +32,7 @@
             position: relative;
             border-radius: 50%;
             box-sizing: content-box;
-            border: 4px solid #4CAF50;
+            border: 4px solid $primary;
 
             &::before {
                 top: 3px;
@@ -60,7 +61,7 @@
 
             .icon-line {
                 height: 5px;
-                background-color: #4CAF50;
+                background-color: $primary;
                 display: block;
                 border-radius: 2px;
                 position: absolute;
