@@ -1,7 +1,7 @@
 <template>
-    <b-card @click="checked = !checked" :border-variant="checked?'success':null">
+    <b-card @click="check.checked = !check.checked" :border-variant="check.checked?'success':null">
        <div>
-           <CustomCheckbox :checked="checked">
+           <CustomCheckbox :checked="check.checked">
                <h4 class="mt-1">{{check.title}}</h4>
            </CustomCheckbox>
        </div>
@@ -25,15 +25,15 @@
         },
         data() {
             return {
-                checked: false
+                // checked: false
             }
         },
         created() {
-            this.checked = this.$ls.get('checked_' + this.index + this.check.title, false);
+            this.check.checked = this.$ls.get('checked_' + this.index + this.check.title, false);
         },
         watch: {
             // whenever question changes, this function will run
-            checked: function (newValue) {
+            'check.checked': function (newValue) {
                 this.$ls.set('checked_' + this.index + this.check.title, newValue);
             }
         }

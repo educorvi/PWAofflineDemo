@@ -1,32 +1,49 @@
 <template>
-    <b-card-group deck>
-        <Checkitem v-for="(check, index) in checks" :key="index" :check="check" :index="index">
-
-        </Checkitem>
-    </b-card-group>
+    <div>
+        <b-card-group deck>
+            <Checkitem v-for="(check, index) in checks" :key="index" :check="check" :index="index">
+            </Checkitem>
+        </b-card-group>
+        <AnimatedDone class="mt-3" v-if="allChecked"/>
+    </div>
 </template>
 
 <script>
     import Checkitem from "@/components/Checkitem";
+    import AnimatedDone from "@/components/AnimatedDone";
     export default {
         name: "Checklist",
-        components: {Checkitem},
+        components: {AnimatedDone, Checkitem},
         data() {
             return {
                 checks: [
                     {
-                        title: "ToDo1"
+                        title: "ToDo1",
+                        checked: false
                     },
                     {
-                        title: "ToDo3"
+                        title: "ToDo3",
+                        checked: false
                     },
                     {
-                        title: "ToDo4"
+                        title: "ToDo4",
+                        checked: false
                     },
                     {
-                        title: "ToDo5"
+                        title: "ToDo5",
+                        checked: false
                     }
                 ]
+            }
+        },
+        computed: {
+            allChecked() {
+                for (const ch of this.checks) {
+                    if (!ch.checked) {
+                        return false;
+                    }
+                }
+                return true;
             }
         },
     }
