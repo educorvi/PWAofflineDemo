@@ -22,15 +22,15 @@
                         checked: false
                     },
                     {
+                        title: "ToDo2",
+                        checked: false
+                    },
+                    {
                         title: "ToDo3",
                         checked: false
                     },
                     {
                         title: "ToDo4",
-                        checked: false
-                    },
-                    {
-                        title: "ToDo5",
                         checked: false
                     }
                 ]
