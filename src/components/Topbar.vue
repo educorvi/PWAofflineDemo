@@ -1,6 +1,6 @@
 <template>
     <b-navbar class="mb-2" id="bar" toggleable="true">
-        <b-navbar-brand>
+        <b-navbar-brand @click="reload">
             <div class="navbar-brand">
                 <img alt="Logo" id="logo" src="../assets/logo.png">
                 <h5 class="ml-2" style="display: inline;">Offline Checklist Demo</h5>
@@ -20,7 +20,9 @@
         computed: {
         },
         methods: {
-
+            reload() {
+                window.location.reload(true)
+            }
         },
     }
 </script>
