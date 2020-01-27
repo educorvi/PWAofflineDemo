@@ -29,12 +29,12 @@
             }
         },
         created() {
-            this.check.checked = this.$ls.get('checked_' + this.index + this.check.title, false);
+            this.check.checked = this.$ls.get('checked_' + this.index.toString() + this.check.title, false);
         },
         watch: {
             // whenever question changes, this function will run
             'check.checked': function (newValue) {
-                this.$ls.set('checked_' + this.index + this.check.title, newValue);
+                this.$ls.set('checked_' + this.index.toString() + this.check.title, newValue);
             }
         }
     }
