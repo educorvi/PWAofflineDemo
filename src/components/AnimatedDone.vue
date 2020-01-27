@@ -93,7 +93,7 @@
                 border-radius: 50%;
                 position: absolute;
                 box-sizing: content-box;
-                border: 4px solid rgba(76, 175, 80, .5);
+                border: 4px solid rgba(77, 186, 135, 0.51);
             }
 
             .icon-fix {
